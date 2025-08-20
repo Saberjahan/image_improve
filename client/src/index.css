@@ -1,0 +1,19 @@
+   /* src/index.css */
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+
+   /* Base styles for the app */
+   body {
+     margin: 0;
+     font-family: 'Inter', sans-serif; /* Using Inter font as per guidelines */
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     overflow-x: hidden; /* Prevent horizontal scrolling */
+   }
+
+   /* Ensure all elements have rounded corners */
+   * {
+     border-radius: 0.5rem; /* Default rounded corners for all elements */
+   }
+   

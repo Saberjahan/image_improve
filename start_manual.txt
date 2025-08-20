@@ -1,0 +1,65 @@
+### **Manual Project Startup Steps**
+
+You will need **two separate Command Prompt windows** open simultaneously for this.
+
+#### **Step 1: Stop All Existing Processes**
+
+       First, ensure no old server processes are interfering.
+
+       1.  **Close all Command Prompt windows** that might be open from previous attempts to run the project.
+       2.  Open your **Task Manager** (you can press `Ctrl+Shift+Esc` or `Ctrl+Alt+Del` and select Task Manager).
+       3.  Go to the "Details" tab.
+       4.  Look for any processes named `node.exe`, `python.exe`, `npm.cmd`, or `flask.exe`. If you find any, select them and click "End task."
+
+#### **Step 2: Start the Backend (Flask Server)**
+
+      1.  Open a **new Command Prompt** window.
+      2.  Navigate to your backend directory: cd /d O:\Data\LLM\Image_Improve\server
+          (Verify your prompt now shows `O:\Data\LLM\Image_Improve\server>`)
+      3.  Activate your Python virtual environment:.\venv\Scripts\activate
+          (You should see `(venv)` appear at the beginning of your command prompt line, like `(venv) O:\Data\LLM\Image_Improve\server>`)
+      4.  Install/Update Python Dependencies (Optional, but good to run once if you haven't recently):
+         pip install --upgrade pip
+         pip install "Flask[async]" flask-cors Pillow
+	 pip install scikit-image
+	 pip install Flask==2.3.3
+	 pip install Flask-Cors==3.0.10
+	 pip install Pillow==10.0.1
+	 pip install numpy==1.26.2
+	 pip install opencv-python==4.9.0.80
+	 pip install scikit-learn==1.2.2
+	 pip install scikit-image==0.19.3
+	 pip install torch==2.3.1
+	 pip install torchvision==0.18.1
+	 pip install diffusers==0.29.0
+	 pip install transformers==4.42.3
+	 pip install accelerate==0.31.0
+	 pip install matplotlib==3.8.1
+	 pip install tensorboardX==2.6.3
+         (You should see "Requirement already satisfied" or "Successfully installed" messages.)
+     5.  Start the Flask server: python -m flask run --port 3001 --debug
+         You should see output similar to:
+         * Serving Flask app 'app.py'
+         * Debug mode: on
+         * Running on http://127.0.0.1:3001
+
+ * **Keep this Command Prompt window open.** This is your backend server.
+
+#### **Step 3: Start the Frontend (React Development Server)**
+
+        1.  Open a **second new Command Prompt** window.
+        2.  Navigate to your frontend (client) directory: cd /d O:\Data\LLM\Image_Improve\client
+            (Verify your prompt now shows `O:\Data\LLM\Image_Improve\client>`)
+        3.  Install/Update Node.js Dependencies (Optional, but good to run once if you haven't recently):
+            npm install
+        4.  Start the React development server:npm start
+           * This command will start the React development server. It might take a moment to compile.
+           * You should see messages like "Starting the development server..." and eventually "Compiled successfully\!"
+
+* **Keep this Command Prompt window open.** This is your frontend server.
+
+#### **Step 4: Open the Browser**
+
+1.  Once both the Flask server (port 3001) and the React development server (port 3000) are running in their respective windows, open your web browser.
+2.  Go to: `http://localhost:3000`
+
