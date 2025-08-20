@@ -176,6 +176,4 @@ This project is open-source and available under the **MIT License**.
 ## 💡 Development Notes
 
 - The backend uses simulated AI processing during development
-- Production deployment requires actual model loading and GPU optimization
-- CORS configuration must be updated for production domains
-- Virtual environment isolation ensures consistent dependency management
+
