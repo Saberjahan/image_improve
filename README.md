@@ -4,6 +4,8 @@ Welcome to the Image Repair AI project! This is a full-stack application designe
 
 ## 🚀 Getting Started
 
+You need to have Node.js and Python installed on your system. 
+
 You have two options to get the application up and running on your local machine:
 
 ### Option 1: The Automated Way (Recommended)
@@ -17,12 +19,10 @@ For a step-by-step guide on setting up the backend (Flask) and frontend (React) 
 
 ## 🧠 Deep Learning Model
 
-To use the deep-learning inpainting methods, you will need a pretrained model:
+To use some of the deep-learning inpainting methods, you will need a pretrained model:
+For Partial Convolution inpainting, you could use "https://drive.google.com/file/d/1sooo-BLSNRUGWG_AB-lxh7xHgJ2bS29a/view?usp=sharing" from https://github.com/tanimutomo/partialconv.
 
-- **Model File:** `gated_conv_model.keras`
-- **Type:** Partial Convolution Inpainting model
-- **Format:** Keras model that loads directly into the Python backend
-- **Purpose:** Performs AI-based intelligent image area restoration
+For now, the other deep learning methods are not set.
 
 ## ✨ Features
 
@@ -37,8 +37,7 @@ The application provides a comprehensive set of tools for targeted image restora
 - **Smart Masking:** Useful for removing backgrounds or large patches of uniform color
 
 ### AI-Powered Restoration
-- **Advanced Inpainting:** Apply cutting-edge AI algorithms to intelligently fill masked areas
-- **Seamless Integration:** Produces natural-looking repairs that blend perfectly with surrounding content
+- **Advanced Inpainting:** Apply classic and AI algorithms to fill masked areas intelligently
 
 ## 📁 Project Structure
 
@@ -77,101 +76,16 @@ The application provides a comprehensive set of tools for targeted image restora
 
 The Flask backend serves as the core processing engine for image restoration operations:
 
-## 🛠 Setup and Installation
-
-### 1. Navigate to Backend Directory
-```bash
-cd Image_Improve/server
-```
-
-### 2. Create Virtual Environment
-```bash
-python -m venv venv
-```
-
-### 3. Activate Virtual Environment
-
-**Windows:**
-```bash
-.\venv\Scripts\activate
-```
-
-**macOS/Linux:**
-```bash
-source venv/bin/activate
-```
-
-### 4. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-## ▶️ Running the Backend Server
-
-Start the Flask development server with debug mode enabled:
-
-```bash
-python -m flask run --port 3001 --debug
-```
-
-**Server Configuration:**
-- **Port:** 3001 (required for frontend communication)
-- **Debug Mode:** Enabled for development
-- **Auto-reload:** Automatic server restart on code changes
-- **Access URL:** `http://127.0.0.1:3001`
-
-Expected output:
-```
- * Debug mode: on
- * Running on http://127.0.0.1:3001
- * Restarting with stat
- * Debugger is active!
-```
-
 ## ⚙️ Configuration Details
 
 ### CORS Setup (`config/settings.py`)
 Ensures proper cross-origin communication between frontend and backend:
 - **Frontend Origin:** `http://localhost:3000` (React dev server)
 - **Backend Origin:** `http://127.0.0.1:3001` (Flask server)
-- **Security:** Prevents unauthorized cross-origin requests
-
-## 🤖 AI Service Implementation
-
-The `services/ai_service.py` module contains the core image processing logic:
-
-### Key Functions
-- **`process_image_with_ai`:** Main inpainting processing pipeline
-- **`generate_keywords_from_description`:** Text-to-prompt generation for guided inpainting
-- **Model Integration:** Direct integration with `gated_conv_model.keras`
-
-### Processing Pipeline
-1. **Image Input:** Receives damaged image and mask data
-2. **Preprocessing:** Normalizes and prepares data for AI model
-3. **Inpainting:** Applies Partial Convolution algorithms
-4. **Post-processing:** Refines output for seamless integration
-5. **Return:** Delivers restored image to frontend
-
-## 🔧 API Endpoints
-
-### `/api/image/process` (POST)
-**Purpose:** Process image restoration requests
-
-**Input:**
-- Base64 encoded image data
-- Mask coordinates/regions
-- Processing parameters
-
-**Output:**
-- Restored image data
-- Processing status
-- Metadata about restoration
 
 ## 📄 License
 
 This project is open-source and available under the **MIT License**.
-
----
 
 ## 💡 Development Notes
 
