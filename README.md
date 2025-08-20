@@ -21,6 +21,7 @@ For a step-by-step guide on setting up the backend (Flask) and frontend (React) 
 
 To use some of the deep-learning inpainting methods, you will need a pretrained model:
 For Partial Convolution inpainting, you could use "https://drive.google.com/file/d/1sooo-BLSNRUGWG_AB-lxh7xHgJ2bS29a/view?usp=sharing" from https://github.com/tanimutomo/partialconv.
+Put the model in ./../Image_Improve\model 
 
 For now, the other deep learning methods are not set.
 
